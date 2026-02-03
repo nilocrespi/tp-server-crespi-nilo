@@ -33,17 +33,16 @@ cp .env.example .env
 Completa el archivo `.env` con tus valores:
 
 ```env
-PORT=3000
-URI_DB=mongodb://localhost:27017/cinemadb
-JWT_SECRET=tu_clave_secreta_super_segura
+PORT=50000
+URI_DB=mongodb://localhost:27017
+JWT_SECRET=contraseñasupersegura
 JWT_EXPIRES=7d
 ```
 
 **Valores recomendados:**
-- `PORT`: Puerto en el que correrá el servidor (ej: 3000, 5000)
+- `PORT`: Puerto en el que correrá el servidor
 - `URI_DB`: Cadena de conexión a MongoDB
-  - Local: `mongodb://localhost:27017/cinemadb`
-  - MongoDB Atlas: `mongodb+srv://usuario:contraseña@cluster.mongodb.net/cinemadb`
+  - Local: `mongodb://localhost:27017/`
 - `JWT_SECRET`: Una cadena de caracteres segura y única para firmar tokens JWT
 - `JWT_EXPIRES`: Tiempo de expiración del token (ej: 7d, 24h)
 
@@ -55,7 +54,7 @@ JWT_EXPIRES=7d
 npm run dev
 ```
 
-El servidor se iniciará y estará disponible en `http://localhost:3000`
+El servidor se iniciará y estará disponible en `http://localhost:50000`
 
 ## Endpoints disponibles
 
@@ -105,32 +104,8 @@ backend/
 - **cors** - Control de acceso entre dominios
 - **dotenv** - Gestión de variables de entorno
 
-## Solución de problemas
-
-### Error de conexión a MongoDB
-
-- Verifica que MongoDB esté corriendo en tu máquina
-- Comprueba la URI_DB en el archivo `.env`
-- Si usas MongoDB Atlas, asegúrate de agregar tu IP en la whitelist
-
-### Puerto ya en uso
-
-- Cambia el valor de `PORT` en el archivo `.env`
-- O termina el proceso que está usando el puerto
-
-### Token JWT inválido
-
-- Asegúrate de tener un token válido en el header `Authorization: Bearer <token>`
-- Verifica que el token no haya expirado
-
-## Desarrollo
-
-Para agregar logs más detallados o cambiar la configuración, edita los archivos en la carpeta `src/`.
-
 ## Documentación de API
 
-Puedes usar la colección de Bruno incluida en la carpeta `cinemdadb-collection/` para probar los endpoints.
+Se puede usar la colección de Bruno incluida en la carpeta `cinemdadb-collection/` para probar los endpoints.
 
 ---
-
-**Última actualización:** Febrero 2026
