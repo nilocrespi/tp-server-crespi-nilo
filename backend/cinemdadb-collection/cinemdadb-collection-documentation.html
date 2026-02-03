@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cinemdadb-collection - API Documentation</title>
+    <style>
+        body { margin: 0; padding: 0; }
+        #opencollection-container { width: 100vw; height: 100vh; }
+    </style>
+    <link rel="stylesheet" href="https://cdn.opencollection.com/docs.css">
+    <script src="https://cdn.opencollection.com/docs.js"></script>
+</head>
+<body>
+    <div id="opencollection-container"></div>
+    <script>
+        const collectionData = "opencollection: 1.0.0\ninfo:\n  name: cinemdadb-collection\nitems:\n  - info:\n      name: get movies\n      type: http\n      seq: 3\n    http:\n      method: GET\n      url: http://localhost:50000/api/movies\n      headers:\n        - name: Authorization\n          value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTgyM2NjYTEwNzY5ZWI5ZjE3NzAwMzEiLCJ1c2VybmFtZSI6InRlc3RVc2VyIiwiZW1haWwiOiJ0ZXN0VXNlckBtYWlsLmNvbSIsImlhdCI6MTc3MDE0Mjk0MiwiZXhwIjoxNzcwMTQ2NTQyfQ.2qix47PzkfcNc0WNU_Tz8u3u7M161c2GwJc9PRGz69E\n      auth: inherit\n    settings:\n      encodeUrl: true\n      timeout: 0\n      followRedirects: true\n      maxRedirects: 5\n  - info:\n      name: login user\n      type: http\n      seq: 2\n    http:\n      method: POST\n      url: http://localhost:50000/api/auth/login\n      body:\n        type: json\n        data: |\n          {\n            \"username\" : \"testUser\",\n            \"email\" : \"testUser@mail.com\",\n            \"password\" : \"testing\"\n          }\n      auth: inherit\n    settings:\n      encodeUrl: true\n      timeout: 0\n      followRedirects: true\n      maxRedirects: 5\n  - info:\n      name: register user\n      type: http\n      seq: 1\n    http:\n      method: POST\n      url: http://localhost:50000/api/auth/register\n      body:\n        type: json\n        data: |-\n          {\n            \"username\" : \"testUser\",\n            \"email\" : \"testUser@mail.com\",\n            \"password\" : \"testing\"\n          }\n      auth: inherit\n    settings:\n      encodeUrl: true\n      timeout: 0\n      followRedirects: true\n      maxRedirects: 5\n  - info:\n      name: add movie\n      type: http\n      seq: 4\n    http:\n      method: POST\n      url: http://localhost:50000/api/movies\n      headers:\n        - name: Authorization\n          value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTgyM2NjYTEwNzY5ZWI5ZjE3NzAwMzEiLCJ1c2VybmFtZSI6InRlc3RVc2VyIiwiZW1haWwiOiJ0ZXN0VXNlckBtYWlsLmNvbSIsImlhdCI6MTc3MDE0Mjk0MiwiZXhwIjoxNzcwMTQ2NTQyfQ.2qix47PzkfcNc0WNU_Tz8u3u7M161c2GwJc9PRGz69E\n      body:\n        type: json\n        data: |-\n          {\n            \"title\": \"Test movie\",\n            \"year\": 2026,\n            \"genre\": \"Test genre\",\n            \"rating\": 10,\n            \"director\": \"Test director\"\n          }\n      auth: inherit\n    settings:\n      encodeUrl: true\n      timeout: 0\n      followRedirects: true\n      maxRedirects: 5\n  - info:\n      name: update movie\n      type: http\n      seq: 5\n    http:\n      method: PATCH\n      url: http://localhost:50000/api/movies/69823de310769eb9f1770035\n      headers:\n        - name: Authorization\n          value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTgyM2NjYTEwNzY5ZWI5ZjE3NzAwMzEiLCJ1c2VybmFtZSI6InRlc3RVc2VyIiwiZW1haWwiOiJ0ZXN0VXNlckBtYWlsLmNvbSIsImlhdCI6MTc3MDE0Mjk0MiwiZXhwIjoxNzcwMTQ2NTQyfQ.2qix47PzkfcNc0WNU_Tz8u3u7M161c2GwJc9PRGz69E\n      body:\n        type: json\n        data: |-\n          {\n            \"rating\": 9\n          }\n      auth: inherit\n    settings:\n      encodeUrl: true\n      timeout: 0\n      followRedirects: true\n      maxRedirects: 5\n  - info:\n      name: delete movie\n      type: http\n      seq: 6\n    http:\n      method: DELETE\n      url: http://localhost:50000/api/movies/69823de310769eb9f1770035\n      headers:\n        - name: Authorization\n          value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTgyM2NjYTEwNzY5ZWI5ZjE3NzAwMzEiLCJ1c2VybmFtZSI6InRlc3RVc2VyIiwiZW1haWwiOiJ0ZXN0VXNlckBtYWlsLmNvbSIsImlhdCI6MTc3MDE0Mjk0MiwiZXhwIjoxNzcwMTQ2NTQyfQ.2qix47PzkfcNc0WNU_Tz8u3u7M161c2GwJc9PRGz69E\n      auth: inherit\n    settings:\n      encodeUrl: true\n      timeout: 0\n      followRedirects: true\n      maxRedirects: 5\nbundled: true\nextensions:\n  bruno:\n    ignore:\n      - node_modules\n      - .git\n    exportedAt: '2026-02-03T18:31:12.297Z'\n    exportedUsing: Bruno/3.0.2\n";
+        new window.OpenCollection({
+            target: document.getElementById('opencollection-container'),
+            opencollection: collectionData,
+            theme: 'light'
+        });
+    </script>
+</body>
+</html>

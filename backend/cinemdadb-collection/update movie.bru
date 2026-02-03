@@ -1,0 +1,26 @@
+meta {
+  name: update movie
+  type: http
+  seq: 5
+}
+
+patch {
+  url: http://localhost:50000/api/movies/69823de310769eb9f1770035
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTgyM2NjYTEwNzY5ZWI5ZjE3NzAwMzEiLCJ1c2VybmFtZSI6InRlc3RVc2VyIiwiZW1haWwiOiJ0ZXN0VXNlckBtYWlsLmNvbSIsImlhdCI6MTc3MDE0Mjk0MiwiZXhwIjoxNzcwMTQ2NTQyfQ.2qix47PzkfcNc0WNU_Tz8u3u7M161c2GwJc9PRGz69E
+}
+
+body:json {
+  {
+    "rating": 9
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
